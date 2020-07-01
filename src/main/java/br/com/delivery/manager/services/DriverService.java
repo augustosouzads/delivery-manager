@@ -22,17 +22,21 @@ public class DriverService {
 	return new DriverDto(driver);
 	}
 
+	public DriverDto update (Long id, Driver driver) {
+		driver.setId(id);
+		driverRepository.save(driver);
+		return new DriverDto(driver);
+	}
+	
+	public void delete(Long id) {
+		driverRepository.deleteById(id);
+	}
 	
 	public DriverDto findById(Long id) {
 		Driver driver = driverRepository.getOne(id);
 		return new DriverDto(driver);
 	}
 
-	public DriverDto update (Long id, Driver driver) {
-		driver.setId(id);
-		driverRepository.save(driver);
-	return new DriverDto(driver);
-	}
 	
 	
 	public List<DriverDto> findAll() {

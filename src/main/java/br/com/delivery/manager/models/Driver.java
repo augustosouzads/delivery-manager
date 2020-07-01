@@ -1,10 +1,14 @@
 package br.com.delivery.manager.models;
 
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import br.com.delivery.manager.dtos.DeliveryTripDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +24,9 @@ public class Driver {
 	private Long id;
 	
 	private String name;
+	
+	@ElementCollection
+	private List<DeliveryTrip> deliveryTrip;
 
 	
 	

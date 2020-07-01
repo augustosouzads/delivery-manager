@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import br.com.delivery.manager.models.Driver;
 
-@Repository
+@Repository //Interface que gerencia as entidades 
 public interface DriverRepository extends JpaRepository<Driver, Long>{
 	
 
