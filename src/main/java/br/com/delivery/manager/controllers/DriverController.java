@@ -19,7 +19,7 @@ import br.com.delivery.manager.services.DriverService;
 
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/v1")
 public class DriverController {
 	
 	@Autowired
@@ -31,12 +31,12 @@ public class DriverController {
 	
 	}
 	
-	@PutMapping(value="{id}")
+	@PutMapping(value="/{id}")
 	public DriverDto update(@PathVariable("id") Long id, @RequestBody Driver driver) {
 		return driverService.update(id, driver);
 	}
 	
-	@DeleteMapping(value="{id}")
+	@DeleteMapping(value="/{id}")
 	public void DeleteMapping(@PathVariable("id") Long id) {
 		driverService.delete(id);
 	}

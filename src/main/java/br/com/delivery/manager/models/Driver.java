@@ -2,13 +2,12 @@ package br.com.delivery.manager.models;
 
 import java.util.List;
 
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
-import br.com.delivery.manager.dtos.DeliveryTripDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +24,7 @@ public class Driver {
 	
 	private String name;
 	
-	@ElementCollection
+	@OneToMany
 	private List<DeliveryTrip> deliveryTrip;
 
 	
